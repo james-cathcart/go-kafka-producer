@@ -1,0 +1,47 @@
+{
+  "namespace": "my.namespace.com",
+  "type": "record",
+  "name": "book",
+  "fields": [
+    {
+      "name": "ID",
+      "type": "string"
+    },
+    {
+      "name": "Title",
+      "type": "string"
+    },
+    {
+      "name": "Errors",
+      "type": [
+        "null",
+        {
+          "type": "array",
+          "items": "string"
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "Author",
+      "type": [
+        "null",
+        {
+          "namespace": "my.namespace.com",
+          "type": "record",
+          "name": "author",
+          "fields": [
+            {
+              "name": "FirstName",
+              "type": "string"
+            },
+            {
+              "name": "LastName",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
